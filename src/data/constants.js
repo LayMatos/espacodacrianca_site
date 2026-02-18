@@ -74,7 +74,8 @@ export const CONTACT_INFO = {
   whatsappFormatted: "+55 65 3025-5865",
   email: "espacodacrianca-bei@hotmail.com",
   endereco: "Rua Castro Alves, 06, Quadra 28, Santa Cruz 1, Cuiabá - MT",
-  enderecoCompleto: "Rua Castro Alves, 06, Quadra 28, Santa Cruz 1, Cuiabá - MT, Brasil"
+  enderecoCompleto: "Rua Castro Alves, 06, Quadra 28, Santa Cruz 1, Cuiabá - MT, Brasil",
+  instagram: "https://www.instagram.com/espacodacriancamt/"
 };
 
 // NOSSA HISTÓRIA - Preencher com informações do portfólio

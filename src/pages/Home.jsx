@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   Rocket, Logo, FloatRocket, FloatCloud, FloatStar, AnimatedNumber 
 } from "../components";
@@ -34,9 +34,22 @@ const Home = () => {
     setCurrentGalleryIndex((prev) => (prev - 1 + GALS.length) % GALS.length);
   };
 
+  // Detectar se é mobile
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const nextDepo = () => {
     setCurrentDepoIndex((prev) => {
-      const maxIndex = Math.max(0, DEPOS.length - 3);
+      // No mobile mostra 1 por vez, no desktop 3
+      const itemsPerView = isMobile ? 1 : 3;
+      const maxIndex = Math.max(0, DEPOS.length - itemsPerView);
       if (maxIndex === 0) return 0;
       return prev >= maxIndex ? 0 : prev + 1;
     });
@@ -44,13 +57,16 @@ const Home = () => {
 
   const prevDepo = () => {
     setCurrentDepoIndex((prev) => {
-      const maxIndex = Math.max(0, DEPOS.length - 3);
+      // No mobile mostra 1 por vez, no desktop 3
+      const itemsPerView = isMobile ? 1 : 3;
+      const maxIndex = Math.max(0, DEPOS.length - itemsPerView);
       if (maxIndex === 0) return 0;
       return prev <= 0 ? maxIndex : prev - 1;
     });
   };
 
-  const itemsPerPage = 7;
+  // No mobile mostra menos itens por página na galeria
+  const itemsPerPage = isMobile ? 4 : 7;
   const totalPages = Math.ceil(GALS.length / itemsPerPage);
 
   const nextGallery = () => {
@@ -107,7 +123,6 @@ const Home = () => {
         {/* Foguetes flutuantes adicionais no hero */}
         <FloatRocket top="25%" left="15%" size={0.4} angle={-15} dur="7s" delay="0s" />
         <FloatRocket bottom="40%" right="20%" size={0.35} angle={25} dur="8s" delay="3s" />
-        <FloatRocket top="60%" left="20%" size={0.45} angle={-20} dur="6s" delay="5s" />
         
         <div className="hcopy" style={{position:"relative",zIndex:2}}>
           <div className="badge">✨ Berçário e Escola</div>
@@ -329,9 +344,13 @@ const Home = () => {
         <FloatStar bottom="30%" left="10%" size={13} delay="5s" />
         <FloatStar bottom="15%" right="10%" size={14} delay="7s" />
         
-        {/* Foguetes na seção Galeria */}
-        <FloatRocket top="18%" right="12%" size={0.35} angle={-18} dur="7s" delay="2s" />
-        <FloatRocket bottom="30%" left="10%" size={0.4} angle={20} dur="8s" delay="5s" />
+        {/* Foguetes na seção Galeria - apenas desktop */}
+        {!isMobile && (
+          <>
+            <FloatRocket top="18%" right="12%" size={0.35} angle={-18} dur="7s" delay="2s" />
+            <FloatRocket bottom="30%" left="10%" size={0.4} angle={20} dur="8s" delay="5s" />
+          </>
+        )}
         
         <div className="section-container">
           <h2 className="ttl">Nossa <em>Galeria</em></h2>
@@ -343,9 +362,7 @@ const Home = () => {
               onClick={prevGallery} 
               aria-label="Galeria anterior"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
+              <span className="carousel-rocket-icon">🚀</span>
             </button>
             
             <div className="gallery-carousel-container">
@@ -386,9 +403,7 @@ const Home = () => {
               onClick={nextGallery} 
               aria-label="Próxima galeria"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
+              <span className="carousel-rocket-icon">🚀</span>
             </button>
           </div>
 
@@ -438,9 +453,13 @@ const Home = () => {
         <FloatStar top="55%" right="9%" size={16} delay="9s" />
         <FloatStar bottom="35%" left="11%" size={14} delay="10s" />
         
-        {/* Foguetes na seção Depoimentos */}
-        <FloatRocket top="25%" right="10%" size={0.3} angle={-15} dur="6s" delay="3s" />
-        <FloatRocket bottom="20%" left="12%" size={0.35} angle={22} dur="7s" delay="6s" />
+        {/* Foguetes na seção Depoimentos - apenas desktop */}
+        {!isMobile && (
+          <>
+            <FloatRocket top="25%" right="10%" size={0.3} angle={-15} dur="6s" delay="3s" />
+            <FloatRocket bottom="20%" left="12%" size={0.35} angle={22} dur="7s" delay="6s" />
+          </>
+        )}
         
         <div className="section-container">
           <h2 className="ttl">O que as <em>Famílias</em> dizem</h2>
@@ -448,18 +467,28 @@ const Home = () => {
           
           <div className="depo-carousel-wrapper">
             <button className="depo-carousel-btn depo-carousel-prev" onClick={prevDepo} aria-label="Depoimentos anteriores">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
+              <span className="carousel-rocket-icon">🚀</span>
             </button>
             
             <div className="depo-carousel-container">
               <div 
                 className="depo-carousel-track" 
-                style={{ transform: `translateX(calc(-${currentDepoIndex * (100 / 3)}% - ${currentDepoIndex * 20}px))` }}
+                style={{ 
+                  transform: isMobile 
+                    ? `translateX(-${currentDepoIndex * 100}%)`
+                    : `translateX(calc(-${currentDepoIndex * (100 / 3)}% - ${currentDepoIndex * 20}px))`,
+                  gap: isMobile ? '0' : '30px'
+                }}
               >
                 {DEPOS.map((d, index) => (
-                  <div className="depocard" key={d.n} style={{ width: `calc((100% - 60px) / 3)`, minWidth: '280px' }}>
+                  <div 
+                    className="depocard" 
+                    key={d.n} 
+                    style={{ 
+                      width: isMobile ? '100%' : `calc((100% - 60px) / 3)`, 
+                      minWidth: isMobile ? '100%' : '280px' 
+                    }}
+                  >
                     <div className="depostars">
                       {[1,2,3,4,5].map(s=>(
                         <span key={s} style={{color:C.amarelo,fontSize:"18px"}}>⭐</span>
@@ -479,22 +508,27 @@ const Home = () => {
             </div>
             
             <button className="depo-carousel-btn depo-carousel-next" onClick={nextDepo} aria-label="Próximos depoimentos">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
+              <span className="carousel-rocket-icon">🚀</span>
             </button>
           </div>
           
-          {DEPOS.length > 3 && (
-            <div className="depo-carousel-dots">
-              {Array.from({ length: Math.max(1, DEPOS.length - 2) }).map((_, index) => (
-                <button
-                  key={index}
-                  className={`depo-carousel-dot ${currentDepoIndex === index ? 'active' : ''}`}
-                  onClick={() => setCurrentDepoIndex(index)}
-                  aria-label={`Ir para depoimento ${index + 1}`}
-                />
-              ))}
+          {DEPOS.length > (isMobile ? 1 : 3) && (
+            <div className="depo-carousel-dots-wrapper">
+              {isMobile && (
+                <div className="depo-carousel-counter">
+                  {currentDepoIndex + 1} de {DEPOS.length}
+                </div>
+              )}
+              <div className="depo-carousel-dots">
+                {Array.from({ length: isMobile ? DEPOS.length : Math.max(1, DEPOS.length - 2) }).map((_, index) => (
+                  <button
+                    key={index}
+                    className={`depo-carousel-dot ${currentDepoIndex === index ? 'active' : ''}`}
+                    onClick={() => setCurrentDepoIndex(index)}
+                    aria-label={`Ir para depoimento ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           )}
         </div>
