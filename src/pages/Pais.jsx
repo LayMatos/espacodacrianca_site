@@ -8,11 +8,19 @@ const Pais = () => {
     <>
       {/* HEADER SECTION */}
       <section className="pais-header-bg">
-        {/* Nuvens decorativas */}
-        <FloatCloud top="8%" left="-6%" size={1.4} opacity={0.25} speed="55s" delay="0s" variant={3} />
-        <FloatCloud top="20%" right="-5%" size={1.2} opacity={0.22} speed="53s" delay="10s" variant={2} />
-        <FloatCloud top="35%" left="-4%" size={1.1} opacity={0.2} speed="57s" delay="20s" variant={1} />
-        <FloatCloud bottom="25%" right="-7%" size={1.3} opacity={0.24} speed="54s" delay="30s" variant={3} />
+        {/* Nuvens decorativas - MAIS NUVENS */}
+        <FloatCloud top="5%" left="-8%" size={1.6} opacity={0.28} speed="58s" delay="0s" variant={3} />
+        <FloatCloud top="8%" left="-6%" size={1.4} opacity={0.25} speed="55s" delay="5s" variant={2} />
+        <FloatCloud top="12%" right="-7%" size={1.5} opacity={0.26} speed="56s" delay="8s" variant={1} />
+        <FloatCloud top="20%" right="-5%" size={1.2} opacity={0.22} speed="53s" delay="12s" variant={3} />
+        <FloatCloud top="25%" left="-5%" size={1.3} opacity={0.24} speed="54s" delay="15s" variant={2} />
+        <FloatCloud top="35%" left="-4%" size={1.1} opacity={0.2} speed="57s" delay="18s" variant={1} />
+        <FloatCloud top="42%" right="-6%" size={1.4} opacity={0.23} speed="52s" delay="22s" variant={3} />
+        <FloatCloud top="50%" left="-3%" size={1.0} opacity={0.21} speed="59s" delay="25s" variant={2} />
+        <FloatCloud bottom="35%" right="-8%" size={1.5} opacity={0.25} speed="55s" delay="28s" variant={1} />
+        <FloatCloud bottom="25%" right="-7%" size={1.3} opacity={0.24} speed="54s" delay="32s" variant={3} />
+        <FloatCloud bottom="18%" left="-5%" size={1.2} opacity={0.22} speed="56s" delay="35s" variant={2} />
+        <FloatCloud bottom="12%" right="-4%" size={1.1} opacity={0.2} speed="58s" delay="38s" variant={1} />
         
         {/* Estrelas decorativas */}
         <FloatStar top="12%" left="4%" size={16} delay="1s" />
@@ -34,10 +42,19 @@ const Pais = () => {
 
       {/* APPS SECTION */}
       <section className="pais-apps-bg">
-        {/* Nuvens decorativas */}
-        <FloatCloud top="10%" right="-6%" size={1.3} opacity={0.23} speed="52s" delay="0s" variant={2} />
-        <FloatCloud top="30%" left="-5%" size={1.1} opacity={0.21} speed="54s" delay="15s" variant={1} />
-        <FloatCloud bottom="20%" right="-4%" size={1.2} opacity={0.22} speed="56s" delay="30s" variant={3} />
+        {/* Nuvens decorativas - MAIS NUVENS */}
+        <FloatCloud top="5%" right="-8%" size={1.5} opacity={0.26} speed="57s" delay="0s" variant={3} />
+        <FloatCloud top="10%" right="-6%" size={1.3} opacity={0.23} speed="52s" delay="5s" variant={2} />
+        <FloatCloud top="15%" left="-7%" size={1.4} opacity={0.24} speed="55s" delay="8s" variant={1} />
+        <FloatCloud top="22%" right="-5%" size={1.2} opacity={0.22} speed="53s" delay="12s" variant={3} />
+        <FloatCloud top="30%" left="-5%" size={1.1} opacity={0.21} speed="54s" delay="15s" variant={2} />
+        <FloatCloud top="38%" right="-4%" size={1.3} opacity={0.23} speed="56s" delay="18s" variant={1} />
+        <FloatCloud top="45%" left="-6%" size={1.2} opacity={0.22} speed="58s" delay="22s" variant={3} />
+        <FloatCloud bottom="35%" right="-7%" size={1.4} opacity={0.24} speed="55s" delay="25s" variant={2} />
+        <FloatCloud bottom="28%" left="-5%" size={1.3} opacity={0.23} speed="57s" delay="28s" variant={1} />
+        <FloatCloud bottom="20%" right="-4%" size={1.2} opacity={0.22} speed="56s" delay="32s" variant={3} />
+        <FloatCloud bottom="15%" left="-6%" size={1.1} opacity={0.21} speed="54s" delay="35s" variant={2} />
+        <FloatCloud bottom="10%" right="-5%" size={1.0} opacity={0.2} speed="59s" delay="38s" variant={1} />
         
         {/* Estrelas decorativas */}
         <FloatStar top="15%" right="8%" size={15} delay="1s" />

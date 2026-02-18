@@ -4967,7 +4967,7 @@ footer a{
     #e4f0ff 95%,
     #e0f0ff 100%
   );
-  padding:120px clamp(20px,5%,60px) 80px;
+  padding:120px clamp(20px,5%,60px) 40px;
   position:relative;
   overflow:hidden;
   margin-top:0;
@@ -5046,8 +5046,8 @@ footer a{
   padding:80px clamp(20px,5%,60px);
   position:relative;
   overflow:hidden;
-  margin-top:-120px;
-  padding-top:200px;
+  margin-top:-60px;
+  padding-top:120px;
 }
 .pais-apps-bg::before{
   content:'';
@@ -5187,12 +5187,12 @@ footer a{
 /* RESPONSIVIDADE - PÁGINA DE PAIS */
 @media(max-width:768px){
   .pais-header-bg{
-    padding:clamp(100px,15vh,120px) clamp(15px,4vw,20px) clamp(40px,6vh,60px);
+    padding:clamp(100px,15vh,120px) clamp(15px,4vw,20px) clamp(25px,4vh,35px);
   }
   .pais-apps-bg{
     padding:clamp(60px,8vh,80px) clamp(15px,4vw,20px);
-    margin-top:-80px;
-    padding-top:clamp(140px,20vh,180px);
+    margin-top:-40px;
+    padding-top:clamp(100px,15vh,120px);
   }
   .apps-grid{
     grid-template-columns:1fr;
@@ -5212,12 +5212,12 @@ footer a{
 }
 @media(max-width:480px){
   .pais-header-bg{
-    padding:clamp(90px,14vh,110px) 15px clamp(35px,5vh,50px);
+    padding:clamp(90px,14vh,110px) 15px clamp(20px,3vh,30px);
   }
   .pais-apps-bg{
     padding:clamp(50px,7vh,70px) 15px;
-    margin-top:-60px;
-    padding-top:clamp(120px,18vh,150px);
+    margin-top:-30px;
+    padding-top:clamp(90px,14vh,110px);
   }
   .apps-grid{
     gap:clamp(20px,3vw,25px);

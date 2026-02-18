@@ -66,7 +66,7 @@ export const MENU_ITEMS = [
   {id: "turmas", icon: "👥", label: "Turmas Oferecidas", color: "#FF9800"},
   {id: "aulas", icon: "🎓", label: "Aulas e Horários", color: "#FF9800"},
   {id: "galeria", icon: "📷", label: "Fotos", color: "#2196F3"},
-  {id: "pais", icon: "👨‍👩‍👧‍👦", label: "Área do Pai", color: "#9C27B0"},
+  {id: "pais", icon: "👨‍👩‍👧‍👦", label: "Área dos Pais", color: "#9C27B0"},
   {id: "contato", icon: "✉️", label: "Fale Conosco", color: "#E91E63"},
 ];
 
