@@ -66,6 +66,7 @@ export const MENU_ITEMS = [
   {id: "turmas", icon: "👥", label: "Turmas Oferecidas", color: "#FF9800"},
   {id: "aulas", icon: "🎓", label: "Aulas e Horários", color: "#FF9800"},
   {id: "galeria", icon: "📷", label: "Fotos", color: "#2196F3"},
+  {id: "pais", icon: "👨‍👩‍👧‍👦", label: "Área do Pai", color: "#9C27B0"},
   {id: "contato", icon: "✉️", label: "Fale Conosco", color: "#E91E63"},
 ];
 
@@ -77,6 +78,23 @@ export const CONTACT_INFO = {
   enderecoCompleto: "Rua Castro Alves, 06, Quadra 28, Santa Cruz 1, Cuiabá - MT, Brasil",
   instagram: "https://www.instagram.com/espacodacriancamt/"
 };
+
+export const APPS_ESCOLA = [
+  {
+    nome: "ClipEscola",
+    descricao: "Acompanhe o dia a dia do seu filho na escola, receba comunicados, veja fotos e muito mais.",
+    icon: "📱",
+    playStore: "https://play.google.com/store/apps/details?id=clipescola.android&hl=pt_BR",
+    appStore: "https://apps.apple.com/br/app/clipescola/id1061679567"
+  },
+  {
+    nome: "WD-MOB V2",
+    descricao: "Acesso rápido e fácil às informações escolares do seu filho, diretamente no seu celular.",
+    icon: "📲",
+    playStore: "https://play.google.com/store/apps/details?id=com.mcu.JFL&hl=pt_BR",
+    appStore: "https://apps.apple.com/br/app/wd-mob-v2/id1370721463"
+  }
+];
 
 // NOSSA HISTÓRIA - Preencher com informações do portfólio
 export const NOSSA_HISTORIA = {

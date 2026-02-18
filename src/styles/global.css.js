@@ -4951,5 +4951,280 @@ footer a{
 @media(max-width:768px){
   .equipe-dots-top,.equipe-dots-bottom{width:80px;height:30px;}
 }
+
+/* PÁGINA DE PAIS */
+.pais-header-bg{
+  background:linear-gradient(180deg,
+    #f0e8ff 0%,
+    #f5f0ff 5%,
+    #faf5ff 12%,
+    #fefaff 25%,
+    #ffffff 45%,
+    #fefaff 60%,
+    #f8faff 72%,
+    #f0f8ff 82%,
+    #e8f0ff 90%,
+    #e4f0ff 95%,
+    #e0f0ff 100%
+  );
+  padding:120px clamp(20px,5%,60px) 80px;
+  position:relative;
+  overflow:hidden;
+  margin-top:0;
+}
+.pais-header-bg::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:
+    linear-gradient(to bottom,
+      rgba(240,232,255,0.5) 0%,
+      rgba(245,240,255,0.4) 10%,
+      rgba(250,245,255,0.3) 20%,
+      rgba(254,250,255,0.2) 30%,
+      transparent 40%,
+      transparent 60%,
+      rgba(254,250,255,0.2) 70%,
+      rgba(248,250,255,0.3) 80%,
+      rgba(240,248,255,0.4) 90%,
+      rgba(224,240,255,0.5) 100%
+    ),
+    radial-gradient(circle at 10% 20%, rgba(156,39,176,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(46,167,224,0.12) 0%, transparent 50%);
+  pointer-events:none;
+  z-index:0;
+  animation:backgroundFloat 25s ease-in-out infinite;
+}
+.pais-header-bg::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:600px;
+  background:linear-gradient(to bottom, 
+    rgba(224,240,255,0) 0%,
+    rgba(224,240,255,0) 10%,
+    rgba(224,240,255,0.02) 20%,
+    rgba(224,240,255,0.05) 30%,
+    rgba(224,240,255,0.1) 40%,
+    rgba(224,240,255,0.2) 50%,
+    rgba(224,240,255,0.35) 60%,
+    rgba(224,240,255,0.5) 70%,
+    rgba(224,240,255,0.7) 80%,
+    rgba(224,240,255,0.85) 90%,
+    rgba(224,240,255,0.95) 95%,
+    rgba(224,240,255,1) 100%
+  );
+  pointer-events:none;
+  z-index:0;
+}
+.pais-apps-bg{
+  background:linear-gradient(180deg,
+    #e0f0ff 0%,
+    #e2f0ff 5%,
+    #e4f0ff 10%,
+    #e6f0ff 15%,
+    #e8f0ff 20%,
+    #eaf2ff 28%,
+    #ecf4ff 35%,
+    #eef4ff 42%,
+    #f0f4ff 48%,
+    #f2f6ff 55%,
+    #f4f8ff 62%,
+    #f6f9ff 68%,
+    #f8faff 74%,
+    #fafbff 79%,
+    #fcfdff 84%,
+    #fefeff 88%,
+    #ffffff 92%,
+    #ffffff 100%
+  );
+  padding:80px clamp(20px,5%,60px);
+  position:relative;
+  overflow:hidden;
+  margin-top:-120px;
+  padding-top:200px;
+}
+.pais-apps-bg::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:300px;
+  background:linear-gradient(to bottom, 
+    rgba(224,240,255,0.5) 0%,
+    rgba(224,240,255,0.4) 10%,
+    rgba(224,240,255,0.3) 20%,
+    rgba(224,240,255,0.2) 30%,
+    rgba(224,240,255,0.1) 40%,
+    rgba(224,240,255,0.05) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  pointer-events:none;
+  z-index:1;
+}
+.apps-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:clamp(30px,5vw,40px);
+  max-width:1000px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+.app-card{
+  background:white;
+  border-radius:25px;
+  padding:clamp(35px,5vw,45px);
+  box-shadow:0 10px 40px rgba(0,0,0,0.1);
+  text-align:center;
+  transition:all 0.4s ease;
+  position:relative;
+  overflow:hidden;
+}
+.app-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  background:linear-gradient(90deg,${C.azul} 0%,${C.azulClaro} 50%,${C.amarelo} 100%);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.4s ease;
+}
+.app-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 50px rgba(0,0,0,0.15);
+}
+.app-card:hover::before{
+  transform:scaleX(1);
+}
+.app-logo-container{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:clamp(20px,3vh,25px);
+  min-height:clamp(80px,12vw,100px);
+}
+.app-logo{
+  max-width:clamp(120px,20vw,160px);
+  max-height:clamp(80px,12vw,100px);
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  transition:transform 0.3s ease;
+}
+.app-card:hover .app-logo{
+  transform:scale(1.05);
+}
+.app-icon{
+  font-size:clamp(64px,10vw,80px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  animation:floatUp 3s ease-in-out infinite;
+}
+.app-name{
+  font-size:clamp(24px,4vw,28px);
+  color:${C.azul};
+  margin-bottom:clamp(15px,2.5vh,20px);
+  font-weight:800;
+}
+.app-description{
+  font-size:clamp(15px,2.5vw,17px);
+  color:#666;
+  line-height:1.7;
+  margin-bottom:clamp(25px,4vh,30px);
+}
+.app-buttons{
+  display:flex;
+  gap:clamp(12px,2vw,15px);
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.app-btn{
+  display:flex;
+  align-items:center;
+  gap:clamp(8px,1.5vw,10px);
+  padding:clamp(12px,2.5vw,14px) clamp(20px,4vw,24px);
+  border-radius:clamp(20px,4vw,25px);
+  font-size:clamp(14px,2.5vw,16px);
+  font-weight:700;
+  text-decoration:none;
+  transition:all 0.3s ease;
+  box-shadow:0 4px 15px rgba(0,0,0,0.15);
+  color:white;
+}
+.app-btn-android{
+  background:linear-gradient(135deg,#3DDC84 0%,#2AB759 100%);
+}
+.app-btn-android:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 20px rgba(61,220,132,0.4);
+  background:linear-gradient(135deg,#2AB759 0%,#3DDC84 100%);
+}
+.app-btn-ios{
+  background:linear-gradient(135deg,#007AFF 0%,#0051D5 100%);
+}
+.app-btn-ios:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 20px rgba(0,122,255,0.4);
+  background:linear-gradient(135deg,#0051D5 0%,#007AFF 100%);
+}
+.app-btn svg{
+  flex-shrink:0;
+}
+
+/* RESPONSIVIDADE - PÁGINA DE PAIS */
+@media(max-width:768px){
+  .pais-header-bg{
+    padding:clamp(100px,15vh,120px) clamp(15px,4vw,20px) clamp(40px,6vh,60px);
+  }
+  .pais-apps-bg{
+    padding:clamp(60px,8vh,80px) clamp(15px,4vw,20px);
+    margin-top:-80px;
+    padding-top:clamp(140px,20vh,180px);
+  }
+  .apps-grid{
+    grid-template-columns:1fr;
+    gap:clamp(25px,4vw,30px);
+  }
+  .app-card{
+    padding:clamp(30px,5vw,35px);
+  }
+  .app-buttons{
+    flex-direction:column;
+    width:100%;
+  }
+  .app-btn{
+    width:100%;
+    justify-content:center;
+  }
+}
+@media(max-width:480px){
+  .pais-header-bg{
+    padding:clamp(90px,14vh,110px) 15px clamp(35px,5vh,50px);
+  }
+  .pais-apps-bg{
+    padding:clamp(50px,7vh,70px) 15px;
+    margin-top:-60px;
+    padding-top:clamp(120px,18vh,150px);
+  }
+  .apps-grid{
+    gap:clamp(20px,3vw,25px);
+  }
+  .app-card{
+    padding:clamp(25px,4vw,30px);
+  }
+}
 `;
 

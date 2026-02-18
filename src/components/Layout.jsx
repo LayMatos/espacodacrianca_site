@@ -23,6 +23,8 @@ const Layout = ({ children }) => {
       setActiveSection("home");
     } else if (path === "/quem-somos") {
       setActiveSection("historia");
+    } else if (path === "/pais") {
+      setActiveSection("pais");
     } else {
       setActiveSection(path.substring(1));
     }
@@ -34,6 +36,9 @@ const Layout = ({ children }) => {
       window.scrollTo(0, 0);
     } else if (id === "turmas") {
       navigate("/turmas");
+      window.scrollTo(0, 0);
+    } else if (id === "pais") {
+      navigate("/pais");
       window.scrollTo(0, 0);
     } else if (id === "home") {
       navigate("/");
