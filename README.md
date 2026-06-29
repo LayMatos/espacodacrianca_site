@@ -82,6 +82,41 @@ Screenshots reais do site em execução (`npm run dev`).
   </tr>
 </table>
 
+### Versão mobile
+
+Layout responsivo em viewport de **390×844** (iPhone).
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="docs/images/mobile-home.jpg" alt="Home mobile" width="220" />
+      <br /><sub>Página inicial</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="docs/images/mobile-menu.jpg" alt="Menu mobile" width="220" />
+      <br /><sub>Menu lateral</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="docs/images/mobile-diferenciais.jpg" alt="Diferenciais mobile" width="220" />
+      <br /><sub>Diferenciais</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <img src="docs/images/mobile-quem-somos.jpg" alt="Quem Somos mobile" width="220" />
+      <br /><sub>Quem Somos</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="docs/images/mobile-turmas.jpg" alt="Turmas mobile" width="220" />
+      <br /><sub>Turmas</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="docs/images/mobile-pais.jpg" alt="Área dos Pais mobile" width="220" />
+      <br /><sub>Área dos Pais</sub>
+    </td>
+  </tr>
+</table>
+
 > Para atualizar as screenshots: com o servidor rodando, execute `node scripts/capture-screenshots.mjs` (requer `npx playwright install chromium`).
 
 ## Funcionalidades
