@@ -33,28 +33,56 @@ Fundada em **2009**, a escola oferece:
 
 ## Prévia visual
 
+Screenshots reais do site em execução (`npm run dev`).
+
+### Página inicial
+
+<p align="center">
+  <img src="docs/images/preview-1.jpg" alt="Hero — Página inicial do site" width="100%" />
+  <br /><sub>Hero — Bem-vindo ao Espaço da Criança</sub>
+</p>
+
 <table>
   <tr>
-    <td align="center">
-      <img src="docs/images/portfolio-1.jpg" alt="Apresentação da escola" width="100%" />
-      <br /><sub>Página institucional</sub>
+    <td align="center" width="50%">
+      <img src="docs/images/preview-2.jpg" alt="Seção Diferenciais" width="100%" />
+      <br /><sub>Diferenciais que Encantam</sub>
     </td>
-    <td align="center">
-      <img src="docs/images/portfolio-2.jpg" alt="Diferenciais pedagógicos" width="100%" />
-      <br /><sub>Diferenciais e metodologia</sub>
+    <td align="center" width="50%">
+      <img src="docs/images/preview-3.jpg" alt="Seção Nossas Turmas" width="100%" />
+      <br /><sub>Nossas Turmas</sub>
     </td>
   </tr>
   <tr>
-    <td align="center">
-      <img src="docs/images/portfolio-3.jpg" alt="Turmas e programas" width="100%" />
-      <br /><sub>Turmas e programas educacionais</sub>
-    </td>
-    <td align="center">
-      <img src="docs/images/portfolio-4.jpg" alt="Atividades e estrutura" width="100%" />
-      <br /><sub>Atividades e estrutura</sub>
+    <td align="center" colspan="2">
+      <img src="docs/images/preview-4.jpg" alt="Seção Aulas e Horários" width="100%" />
+      <br /><sub>Aulas e Horários — Integral, Meio-período e Semi-integral</sub>
     </td>
   </tr>
 </table>
+
+### Outras páginas
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/images/site-quem-somos.png" alt="Página Quem Somos" width="100%" />
+      <br /><sub>Quem Somos — Nossa História</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/images/site-turmas.png" alt="Página Turmas" width="100%" />
+      <br /><sub>Turmas — Berçário, Ed. Infantil e Fundamental</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="docs/images/site-pais.png" alt="Página Área dos Pais" width="100%" />
+      <br /><sub>Área dos Pais — Apps ClipEscola e WD-MOB V2</sub>
+    </td>
+  </tr>
+</table>
+
+> Para atualizar as screenshots: com o servidor rodando, execute `node scripts/capture-screenshots.mjs` (requer `npx playwright install chromium`).
 
 ## Funcionalidades
 
@@ -133,7 +161,9 @@ npm run lint     # Executa o ESLint
 ```
 espacodacrianca/
 ├── docs/
-│   └── images/              # Imagens usadas neste README
+│   └── images/              # Screenshots do site para o README
+├── scripts/
+│   └── capture-screenshots.mjs  # Gera as screenshots do README
 ├── public/
 │   └── images/              # Fotos do site (hero, turmas, aulas, etc.)
 ├── src/
